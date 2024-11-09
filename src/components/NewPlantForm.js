@@ -1,14 +1,14 @@
-import React,{useEffect,useState} from "react";
+import React,{useState} from "react";
 
 function NewPlantForm({addPlant}) {
 
   const[plantName,setPlantName] = useState("")
   const[plantImage,setPlantImage] = useState("")
-  const[plantPrice,setPlantPrice] = useState(" ")
+  const[plantPrice,setPlantPrice] = useState("")
   
   return (
     <div className="new-plant-form" onSubmit={(e)=>{e.preventDefault() 
-    addPlant(plantName,plantImage,plantPrice)}}>
+                                                    addPlant(plantName,plantImage,plantPrice)}}>
       <h2>New Plant</h2>
       <form>
         <input type="text" name="name" placeholder="Plant name" value={plantName} onChange={(e)=>setPlantName(e.target.value)}/>
