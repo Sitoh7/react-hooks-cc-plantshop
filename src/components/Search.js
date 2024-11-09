@@ -5,7 +5,10 @@ function Search({plantSearch}) {
 const [search,setSearch] = useState("")
 
 
+useEffect(()=>{
+  plantSearch(search)
 
+},[search])
 
 
   return (
