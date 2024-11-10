@@ -12,6 +12,7 @@ function fetchPlants(){
   fetch("http://localhost:6001/plants")
   .then(res=>res.json())
   .then(plants=>setPlants(plants))
+  .catch(error=>window.alert(error))
 }
 
 useEffect(fetchPlants,[])
@@ -47,6 +48,7 @@ function addPlant(plantName,plantImage,plantPrice){
     body:JSON.stringify(newPlant)
   })
   .then(()=>fetchPlants())
+  .catch(error=>window.alert(error))
   
 }
 
@@ -56,6 +58,7 @@ function deletePlant(id){
     method:"DELETE"
   })
   .then(()=>fetchPlants())
+  .catch(error=>window.alert(error))
 }
 
 
@@ -70,6 +73,7 @@ function changePrice(id){
    body:JSON.stringify({price:newPrice})
  })
  .then(()=>fetchPlants())
+ .catch(error=>window.alert(error))
 }
 
   return (
